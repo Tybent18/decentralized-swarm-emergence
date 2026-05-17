@@ -1,0 +1,15 @@
+pygame
+numpy
+matplotlib
+scipy
+
+later:
+
+torch
+pettingzoo
+gymnasium
+supersuit
+ray[rllib]
+wandb
+scikit-learn
+pandas
