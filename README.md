@@ -2,7 +2,6 @@
 
 A controlled study of emergent coordination in decentralized multi-agent reinforcement learning systems under structured constraints.
 
-Repository: [decentralized-swarm-emergence](https://github.com/Tybent18/decentralized-swarm-emergence?utm_source=chatgpt.com)
 
 ---
 
