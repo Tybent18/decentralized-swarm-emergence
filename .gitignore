@@ -1,20 +1,12 @@
-# Virtual environment
-venv/
-
-# Python cache
 __pycache__/
-*.pyc
-
-# Logs
-logs/
-
-# VS Code
-.vscode/
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# PyTorch checkpoints
-*.pt
-*.pth
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+.baseline-venv/
+venv/
+results/
+build/
+dist/
+*.log
