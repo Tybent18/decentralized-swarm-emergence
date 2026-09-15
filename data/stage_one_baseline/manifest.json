@@ -1,0 +1,51 @@
+{
+  "schema_version": "stage-one.1",
+  "generated_at_utc": "2026-09-15T02:53:14.992859+00:00",
+  "python": "3.12.14",
+  "base_config": {
+    "grid_size": 16,
+    "n_agents": 6,
+    "n_targets": 8,
+    "observation_radius": 4,
+    "max_steps": 180,
+    "alpha": 0.5,
+    "step_cost": 0.01,
+    "seed": 7,
+    "reward_scheme": "weak"
+  },
+  "episode_count": 200,
+  "new_episode_count": 200,
+  "policies": [
+    "distributed-greedy",
+    "flocking",
+    "greedy",
+    "random"
+  ],
+  "alphas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "claim_boundary": "Heuristic baseline evidence only; no learned-policy emergence claim.",
+  "files": [
+    "episodes.csv",
+    "summary.csv",
+    "charts/reward_topology_baselines.png",
+    "charts/behavioral_metrics.png",
+    "charts/trajectory_and_heatmap.png"
+  ]
+}

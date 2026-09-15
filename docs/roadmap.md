@@ -1,165 +1,61 @@
-# Research Roadmap — Decentralized Swarm Emergence
+# Research roadmap
 
-This document defines the staged evolution of the swarm emergence research system.
+The long-range research space is `E(α,b,N)`: reward topology, communication bandwidth, and swarm scale. Claims advance only when the corresponding implementation, frozen data, and statistical test exist.
 
-Each stage increases one or more of the following constraints:
+## True Stage One - experimental foundation (implemented)
 
-- α → reward structure complexity
-- b → communication constraints
-- N → system scale
+- deterministic world physics and seeded layouts;
+- fixed-shape anonymous local observations;
+- PettingZoo Parallel API contract;
+- literal local, global, and hybrid α reward credit;
+- random, greedy, flocking, and oracle baselines;
+- performance and behavioral metrics;
+- trajectory overlays, heatmaps, charts, raw CSV, summaries, and manifests;
+- live simulation, safe cancellation, one-click collection, and read-only GitHub evidence export;
+- correctness and reproducibility tests.
 
-The goal is to progressively move from deterministic simulation → learning systems → large-scale emergent coordination.
+Stage One establishes instrumentation and baseline separation. It does not demonstrate learned emergence.
 
----
+## Stage Two - learning baselines
 
-## Stage 1 — Deterministic Environment Foundation (Completed / In Progress)
+- single-agent training sanity check;
+- Independent PPO;
+- shared-policy PPO;
+- identical training budgets and environment distributions;
+- checkpoint provenance and evaluation-only seeds.
 
-### Objective
-Establish a fully observable, fully deterministic swarm simulation.
+Exit criterion: reproducible learned-policy checkpoints that outperform or meaningfully differ from frozen heuristic baselines.
 
-### Implemented
-- grid-based environment (20×20)
-- manual agent control (V1)
-- random agent policy baseline (V2)
-- reward collection environment (V3)
-- rendering pipeline (Pygame)
+## Stage Three - emergence experiment
 
-### Purpose
-This stage isolates **environment correctness** before learning is introduced.
+- pre-registered α grid and seed count;
+- multiple-comparison-aware statistical testing;
+- emergence curve with confidence intervals;
+- behavioral structure analysis and reward-exploitation checks;
+- estimate α* only if the registered criterion is met.
 
----
+Exit criterion: evidence supporting or rejecting an α-dependent coordination transition.
 
-## Stage 2 — Metrics & Observability Layer (In Progress)
+## Stage Four - communication bandwidth
 
-### Objective
-Make swarm behavior measurable.
+- no-message control;
+- scalar and bounded-vector messages;
+- local and broadcast topologies;
+- information-cost accounting.
 
-### Additions
-- movement distance tracking
-- collision metrics
-- reward efficiency tracking
-- trajectory logging
-- episode-level statistics
+Exit criterion: measured effect of bandwidth `b` on efficiency and convergence.
 
-### Purpose
-Transform raw simulation into a **measurable system of dynamics**
+## Stage Five - scale and resilience
 
----
+- registered agent counts beyond the 5–10 agent capstone setting;
+- 10–30% randomized failure interventions;
+- observation noise and latency;
+- compute/memory/runtime profiling.
 
-## Stage 3 — Formal MARL Environment (PettingZoo Integration)
+Exit criterion: bounded claims about robustness and scaling, not an assumed “100-agent” victory lap.
 
-### Objective
-Convert environment into a standardized multi-agent RL interface.
+## Stage Six - unified phase space
 
-### Additions
-- PettingZoo Parallel API
-- `reset()`, `step()`, `observe()`
-- shared observation schema
-- reward function abstraction layer
+Combine validated axes into empirical `E(α,b,N)` diagrams. Critical thresholds and phase-transition language remain hypotheses until supported by repeatable evidence.
 
-### Purpose
-Enable reproducible multi-agent training experiments.
-
----
-
-## Stage 4 — Reinforcement Learning Baselines
-
-### Objective
-Introduce learning dynamics.
-
-### Models
-- Independent PPO (baseline)
-- Shared-policy PPO (primary model)
-
-### Experiments
-- single-agent validation
-- multi-agent shared policy training
-- stability under sparse reward
-
-### Purpose
-Test whether coordination emerges under controlled reward structures.
-
----
-
-## Stage 5 — Emergence Analysis System
-
-### Objective
-Quantify coordination.
-
-### Metrics
-- coordination efficiency
-- entropy of policy actions
-- inter-agent distance statistics
-- role differentiation score
-- clustering of behavior patterns
-
-### Output
-- emergence curves over α
-- statistical significance testing across seeds
-
----
-
-## Stage 6 — Communication-Constrained Systems
-
-### Objective
-Introduce bandwidth-limited interaction.
-
-### Experiments
-- message size constraints (b)
-- local vs broadcast communication
-- graph-based interaction topology
-- learned communication policies
-
-### Key Question
-What is the minimum information required for coordination?
-
----
-
-## Stage 7 — Scaling & Robustness (Large N Systems)
-
-### Objective
-Study emergent behavior at scale.
-
-### Experiments
-- 5 → 10 → 50 → 100+ agents
-- agent dropout (failure simulation)
-- noise injection
-- latency simulation
-
-### Key Question
-When does decentralized control outperform centralized control?
-
----
-
-## Stage 8 — Unified Phase Space Analysis
-
-### Objective
-Combine all axes into a single system view.
-
-### Model
-E(α, b, N)
-
-### Outputs
-- phase diagrams
-- transition boundaries
-- critical thresholds (α*, b*, N*)
-- regime classification of swarm behavior
-
----
-
-## Final Target State
-
-A fully characterized swarm intelligence system where:
-
-- coordination emerges from constraints, not design
-- phase transitions are empirically observable
-- system behavior is reproducible across seeds
-- scalability and robustness are measurable properties
-
----
-
-## Guiding Principle
-
-Each stage must satisfy:
-
-> No new complexity is added without measurable instrumentation for it.
+> Guiding rule: no new complexity without instrumentation, and no result claim without frozen evidence.
