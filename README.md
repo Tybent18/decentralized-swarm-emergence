@@ -87,7 +87,7 @@ These results establish discriminative baselines and a functioning measurement s
 | Minimal communication and bandwidth b | Future stage; not claimed |
 | Statistically validated α* | Requires learned-policy data |
 
-Read the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), and [research roadmap](docs/roadmap.md).
+Read the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), [research roadmap](docs/roadmap.md), and complete [research document library](docs/research/README.md).
 
 ## Architecture
 
@@ -133,7 +133,19 @@ The tests include the official PettingZoo parallel API test, seeded determinism,
 5. Scaling and failure resilience (`N`).
 6. Full empirical phase space `E(α,b,N)`.
 
-## Research papers
+## Research documents
+
+### Current five-document packet
+
+- [True Stage One Technical Report](docs/research/stage-one-technical-report.pdf) — implemented environment, baseline, instrumentation, and frozen evidence
+- [Pre-Registered Experimental Protocol](docs/research/experimental-protocol.pdf) — next shared-policy PPO versus Independent PPO experiment
+- [Tier 1: Capstone Research Concept](docs/research/tier-1-capstone.pdf) — reward topology and learned coordination
+- [Tier 2: Master's Research Design](docs/research/tier-2-masters.pdf) — communication bandwidth and topology
+- [Tier 3: Doctoral Research Agenda](docs/research/tier-3-doctoral-agenda.pdf) — formal models, robustness, and scaling
+
+Use the [navigable research library](docs/research/README.md) for reading order, scope, and evidence status.
+
+### Historical V1–V3 papers
 
 - [V1: Reward Topology](docs/papers/v1_reward_topology.pdf)
 - [V2: Communication Bandwidth](docs/papers/v2_communication_bandwith.pdf)
