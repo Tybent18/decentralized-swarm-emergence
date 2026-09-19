@@ -109,7 +109,7 @@ These results establish discriminative baselines and a functioning measurement s
 | Minimal communication and bandwidth b | Future stage; not claimed |
 | Statistically validated α* | Requires learned-policy data |
 
-Read the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), [research roadmap](docs/roadmap.md), and complete [research document library](docs/research/README.md).
+Read the **[current research state](docs/current-research-state.md)** first for the evidence-to-experiment transition, then the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), [research roadmap](docs/roadmap.md), and complete [research document library](docs/research/README.md).
 
 ## Architecture
 
@@ -156,6 +156,8 @@ The tests include the official PettingZoo parallel API test, seeded determinism,
 6. Full empirical phase space `E(α,b,N)`.
 
 ## Research documents
+
+**[Current Research State & Experimental Transition](docs/current-research-state.md)** — the recommended starting point for what is established now, what remains unproven, and how the frozen heuristic evidence transitions into the learned α experiment.
 
 ### Current five-document packet
 
