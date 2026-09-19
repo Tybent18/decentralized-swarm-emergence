@@ -2,6 +2,8 @@
 
 The long-range research space is `E(α,b,N)`: reward topology, communication bandwidth, and swarm scale. Claims advance only when the corresponding implementation, frozen data, and statistical test exist.
 
+**Current status:** see [Current Research State & Experimental Transition](current-research-state.md) for the bridge between frozen heuristic evidence, the implemented learned-policy runner, and the active α experiment.
+
 ## True Stage One - experimental foundation (implemented)
 
 - deterministic world physics and seeded layouts;
@@ -16,13 +18,16 @@ The long-range research space is `E(α,b,N)`: reward topology, communication ban
 
 Stage One establishes instrumentation and baseline separation. It does not demonstrate learned emergence.
 
-## Stage Two - learning baselines
+## Stage Two - learning baselines (runner implemented; evidence collection active)
 
 - single-agent training sanity check;
 - Independent PPO;
 - shared-policy PPO;
 - identical training budgets and environment distributions;
-- checkpoint provenance and evaluation-only seeds.
+- checkpoint provenance and evaluation-only seeds;
+- optional hidden and spatially shuffled neighbor-information controls.
+
+The executable learned-policy runner is implemented. Pilot execution validates the pipeline but does not satisfy the exit criterion.
 
 Exit criterion: reproducible learned-policy checkpoints that outperform or meaningfully differ from frozen heuristic baselines.
 
