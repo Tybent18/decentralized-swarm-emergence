@@ -1,0 +1,32 @@
+{
+  "protocol_version": "learned-stage-one.1",
+  "research_question": "Does reward topology change learned decentralized coordination when agents have no direct communication channel?",
+  "hypothesis": "Increasing team-level reward weight produces a meaningful coordination discrepancy relative to local reward training.",
+  "falsification": "The hypothesis is unsupported if reward-topology manipulation produces no meaningful, uncertainty-bounded coordination discrepancy under matched training budgets.",
+  "independent_variables": {
+    "alpha": [0.0, 0.25, 0.5, 0.75, 1.0],
+    "architecture": ["shared_ppo", "independent_ppo"]
+  },
+  "primary_outcomes": ["completion_rate", "coordination_efficiency"],
+  "secondary_outcomes": ["collision_rate", "steps", "action_entropy", "spatial_order", "role_differentiation"],
+  "controls": {
+    "direct_communication": false,
+    "matched_training_budget": true,
+    "separate_train_and_evaluation_seeds": true,
+    "neighbor_ablation_modes": ["visible", "hidden", "shuffled"],
+    "frozen_heuristic_baselines": true
+  },
+  "confirmatory_criteria": {
+    "direction": "alpha=1 minus alpha=0 is positive for both primary outcomes",
+    "uncertainty": "95% bootstrap interval excludes zero for at least one primary outcome",
+    "dose_response": "positive Spearman association across alpha levels",
+    "robustness": "direction is not solely created by one training seed or evaluation seed",
+    "no_alpha_star_claim": "A critical threshold requires denser alpha sampling and independent replication"
+  },
+  "claim_exclusions": [
+    "No learned communication claim",
+    "No alpha-star or phase-transition claim from the initial sweep",
+    "No real-robot generalization claim",
+    "No emergence claim from reward return alone"
+  ]
+}

@@ -12,6 +12,7 @@ class ExperimentConfig:
     step_cost: float = 0.01
     seed: int = 7
     reward_scheme: str = "weak"
+    neighbor_mode: str = "visible"
 
     def __post_init__(self):
         if self.grid_size < 5:
@@ -26,6 +27,8 @@ class ExperimentConfig:
             raise ValueError("observation_radius and max_steps must be positive")
         if self.reward_scheme not in {"weak", "sparse"}:
             raise ValueError("reward_scheme must be 'weak' or 'sparse'")
+        if self.neighbor_mode not in {"visible", "hidden", "shuffled"}:
+            raise ValueError("neighbor_mode must be 'visible', 'hidden', or 'shuffled'")
 
     def to_dict(self):
         return asdict(self)

@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "decentralized-swarm-emergence"
-version = "1.0.0"
+version = "1.1.0"
 description = "Reproducible Stage One laboratory for decentralized swarm experiments"
 requires-python = ">=3.10"
 dependencies = ["gymnasium>=1.1,<2", "matplotlib>=3.9,<4", "numpy>=2,<3", "pettingzoo>=1.25,<2", "Pillow>=11,<13", "scipy>=1.14,<2"]

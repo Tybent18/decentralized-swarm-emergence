@@ -77,6 +77,12 @@ class SwarmParallelEnv(ParallelEnv):
             dx, dy = pos - center
             if abs(dx) <= radius and abs(dy) <= radius:
                 obs[1, int(dy + radius), int(dx + radius)] = 1.0
+        if self.config.neighbor_mode == "hidden":
+            obs[1] = 0.0
+        elif self.config.neighbor_mode == "shuffled":
+            # Deterministic spatial corruption preserves neighbor count but destroys geometry.
+            shift = 1 + ((self.world.step_count + agent_index + self.config.seed) % max(side - 1, 1))
+            obs[1] = np.roll(obs[1], shift=shift, axis=(0, 1))
         for tx, ty in self.world.targets:
             dx, dy = tx - int(center[0]), ty - int(center[1])
             if abs(dx) <= radius and abs(dy) <= radius:

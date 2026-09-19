@@ -4,7 +4,7 @@
 
 True Stage One turns the original grid demo into an experiment platform aligned with the capstone study *Emergent Intelligence in Decentralized Swarms*. It provides correct PettingZoo semantics, fixed-shape anonymous observations, reward-topology control, heuristic baselines, one-click evidence collection, automated charts, and a game-like live simulation.
 
-> Research boundary: Stage One validates the environment, instrumentation, and heuristic baselines. It does **not** claim trained PPO, learned communication, a critical α*, or a demonstrated phase transition.
+> Research boundary: the repository now contains the learned-policy experimental runner, but a pilot or implementation test is not automatically confirmatory evidence. It does **not** claim learned communication, a critical α*, or a demonstrated phase transition.
 
 ## Live laboratory
 
@@ -52,6 +52,28 @@ results/my_run/
 
 The repository also contains a safe **Evidence Export** GitHub Action. Enter the next seed and batch size from the Actions tab; it runs the entire collector and provides a downloadable evidence bundle without writing to the repository.
 
+## Start the learned experiment
+
+Validate the full learned-policy pipeline quickly:
+
+```bash
+python main.py learn --pilot --output results/learned_pilot
+```
+
+Run the registered no-communication reward-topology sweep:
+
+```bash
+python main.py learn --updates 30 --episodes-per-update 4 \
+  --train-seeds 3 --evaluation-seeds 5 \
+  --output results/learned_stage_one
+```
+
+This trains shared-policy PPO and Independent PPO at five α values under matched budgets, evaluates on disjoint seeds, exports checkpoints and evidence, and computes effect sizes, bootstrap intervals, Welch tests, and dose-response correlations. Add `--neighbor-controls` to test visible, hidden, and spatially shuffled neighbor channels.
+
+Read the [learned Stage One protocol](docs/learned-stage-one.md) and machine-readable [frozen decision criteria](experiments/stage_one_learned.json) before interpreting results.
+
+The **Learned Stage One Experiment** workflow in GitHub Actions runs the same frozen sweep on demand and uploads checkpoints, raw evaluations, statistics, charts, and a checksummed manifest as a downloadable artifact. The inferential unit is an independently trained policy seed; held-out evaluation episodes are averaged within that unit rather than treated as extra replicates.
+
 ## Frozen Stage One evidence
 
 The committed [baseline dataset](data/stage_one_baseline/episodes.csv) contains 200 recorded conditions: 4 policies × 5 α values × 10 seeds. Because heuristic actions do not learn from reward, α changes recorded return but should not change their trajectories. That invariant is deliberate.
@@ -83,7 +105,7 @@ These results establish discriminative baselines and a functioning measurement s
 | Success, time, collision, distance, efficiency | Exported |
 | Entropy, spatial order, inter-agent distance, roles | Exported |
 | Trajectory overlays and heatmaps | Exported |
-| Shared-policy PPO and Independent PPO | Next stage; not claimed |
+| Shared-policy PPO and Independent PPO | Implemented experimental runner; confirmatory evidence pending full sweep |
 | Minimal communication and bandwidth b | Future stage; not claimed |
 | Statistically validated α* | Requires learned-policy data |
 
@@ -126,9 +148,9 @@ The tests include the official PettingZoo parallel API test, seeded determinism,
 
 ## Research sequence
 
-1. **True Stage One - complete:** environment correctness, observability, metrics, baselines, one-click collection.
-2. Shared-policy and Independent PPO under identical budgets.
-3. Pre-registered α sweep and statistical emergence testing.
+1. **True Stage One substrate - complete:** environment correctness, observability, metrics, baselines, one-click collection.
+2. **Learned Stage One runner - implemented:** shared-policy and Independent PPO under identical budgets.
+3. **Experimental collection - active:** pre-registered α sweep and statistical coordination testing.
 4. Minimal communication and bandwidth constraints (`b`).
 5. Scaling and failure resilience (`N`).
 6. Full empirical phase space `E(α,b,N)`.

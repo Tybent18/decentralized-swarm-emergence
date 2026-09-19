@@ -1,0 +1,59 @@
+name: Learned Stage One Experiment
+
+on:
+  workflow_dispatch:
+    inputs:
+      updates:
+        description: "PPO updates per policy"
+        required: true
+        default: "30"
+      episodes_per_update:
+        description: "Training episodes per update"
+        required: true
+        default: "4"
+      train_seeds:
+        description: "Independent policy-training seeds"
+        required: true
+        default: "3"
+      evaluation_seeds:
+        description: "Held-out episodes per trained policy"
+        required: true
+        default: "5"
+      neighbor_controls:
+        description: "Run visible, hidden, and shuffled neighbor channels"
+        required: true
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - name: Run learned Stage One experiment
+        shell: bash
+        run: |
+          controls=""
+          if [[ "${{ inputs.neighbor_controls }}" == "true" ]]; then
+            controls="--neighbor-controls"
+          fi
+          python main.py learn \
+            --updates "${{ inputs.updates }}" \
+            --episodes-per-update "${{ inputs.episodes_per_update }}" \
+            --train-seeds "${{ inputs.train_seeds }}" \
+            --evaluation-seeds "${{ inputs.evaluation_seeds }}" \
+            $controls \
+            --output results/learned-stage-one
+      - uses: actions/upload-artifact@v4
+        with:
+          name: learned-stage-one-${{ github.run_number }}
+          path: results/learned-stage-one
+          retention-days: 90
