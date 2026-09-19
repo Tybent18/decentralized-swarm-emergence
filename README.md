@@ -74,6 +74,12 @@ Read the [learned Stage One protocol](docs/learned-stage-one.md) and machine-rea
 
 The **Learned Stage One Experiment** workflow in GitHub Actions runs the same frozen sweep on demand and uploads checkpoints, raw evaluations, statistics, charts, and a checksummed manifest as a downloadable artifact. The inferential unit is an independently trained policy seed; held-out evaluation episodes are averaged within that unit rather than treated as extra replicates.
 
+## Learned Stage One evidence
+
+The first registered visible-neighbor sweep is complete: 30 trained policies and 150 held-out evaluation episodes. The preregistered positive-direction hypothesis was **not supported**. Completion declined from 0.967 to 0.244 for shared PPO and from 0.900 to 0.267 for Independent PPO between α = 0 and α = 1. Under this implementation and budget, stronger team weighting reduced coordination performance, consistent with—but not proof of—a harder credit-assignment problem.
+
+Read the [full learned-results interpretation](docs/learned-stage-one-results.md) and inspect the [committed evidence](data/learned_stage_one_full/). This is a negative result with a reproducible audit trail—not a phase-transition or learned-communication claim.
+
 ## Frozen Stage One evidence
 
 The committed [baseline dataset](data/stage_one_baseline/episodes.csv) contains 200 recorded conditions: 4 policies × 5 α values × 10 seeds. Because heuristic actions do not learn from reward, α changes recorded return but should not change their trajectories. That invariant is deliberate.
@@ -109,7 +115,7 @@ These results establish discriminative baselines and a functioning measurement s
 | Minimal communication and bandwidth b | Future stage; not claimed |
 | Statistically validated α* | Requires learned-policy data |
 
-Read the **[current research state](docs/current-research-state.md)** first for the evidence-to-experiment transition, then the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), [research roadmap](docs/roadmap.md), and complete [research document library](docs/research/README.md).
+Read the [Stage One methods](docs/stage-one-methods.md), [verification record](docs/stage-one-verification.md), [research roadmap](docs/roadmap.md), and complete [research document library](docs/research/README.md).
 
 ## Architecture
 
@@ -156,8 +162,6 @@ The tests include the official PettingZoo parallel API test, seeded determinism,
 6. Full empirical phase space `E(α,b,N)`.
 
 ## Research documents
-
-**[Current Research State & Experimental Transition](docs/current-research-state.md)** — the recommended starting point for what is established now, what remains unproven, and how the frozen heuristic evidence transitions into the learned α experiment.
 
 ### Current five-document packet
 

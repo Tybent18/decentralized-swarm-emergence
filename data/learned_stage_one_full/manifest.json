@@ -1,0 +1,70 @@
+{
+  "schema_version": "learned-stage-one.1",
+  "generated_at_utc": "2026-09-19T22:09:31.712795+00:00",
+  "python": "3.12.14",
+  "base_config": {
+    "grid_size": 10,
+    "n_agents": 6,
+    "n_targets": 6,
+    "observation_radius": 3,
+    "max_steps": 100,
+    "alpha": 0.5,
+    "step_cost": 0.01,
+    "seed": 7,
+    "reward_scheme": "weak",
+    "neighbor_mode": "visible"
+  },
+  "ppo_budget": {
+    "updates": 30,
+    "episodes_per_update": 4,
+    "epochs": 4,
+    "hidden_size": 48,
+    "learning_rate": 0.003,
+    "gamma": 0.99,
+    "gae_lambda": 0.95,
+    "clip_ratio": 0.2,
+    "value_coefficient": 0.5,
+    "entropy_coefficient": 0.01,
+    "max_grad_norm": 0.7
+  },
+  "alphas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "train_seeds": [
+    0,
+    1,
+    2
+  ],
+  "evaluation_seeds": [
+    100,
+    101,
+    102,
+    103,
+    104
+  ],
+  "architectures": [
+    "shared",
+    "independent"
+  ],
+  "neighbor_modes": [
+    "visible"
+  ],
+  "direct_communication": false,
+  "claim_boundary": "Learned-policy evidence. Coordination/emergence is supported only if preregistered effect, uncertainty, and robustness criteria are met.",
+  "files": [
+    "training.csv",
+    "evaluations.csv",
+    "analysis.csv",
+    "charts/learned_reward_topology.png"
+  ],
+  "checksums": {
+    "training.csv": "f9261f68b5827b2f112e2782514b5c4e8ae85f0fba1d207f8533e2a0b20790df",
+    "evaluations.csv": "5e9788d805c11e4845a238935212987687b4d2a50dd81f091f44a4c15ad4d6a3",
+    "analysis.csv": "99dea40cdb00d82decd41b276cbeb09caddfe0a049c5500065ee8c8170bda0b1",
+    "charts/learned_reward_topology.png": "25c966c8857d775aaaae21eff624faac838bdff482d7fc8f5e22a7f18496b9e8"
+  }
+}
