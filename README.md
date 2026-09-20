@@ -78,11 +78,11 @@ The **Learned Stage One Experiment** workflow in GitHub Actions runs the same fr
 
 The first registered visible-neighbor sweep is complete: 30 trained policies and 150 held-out evaluation episodes. The preregistered positive-direction hypothesis was **not supported**. Completion declined from 0.967 to 0.244 for shared PPO and from 0.900 to 0.267 for Independent PPO between α = 0 and α = 1. Under this implementation and budget, stronger team weighting reduced coordination performance, consistent with—but not proof of—a harder credit-assignment problem.
 
-Read the [full learned-results interpretation](docs/learned-stage-one-results.md) and inspect the [committed evidence](data/learned_stage_one_full/). This is a negative result with a reproducible audit trail—not a phase-transition or learned-communication claim.
+Read the [full learned-results interpretation](docs/learned-stage-one-results.md) and inspect the [dated committed evidence](data/learned_stage_one/runs/2026-09-19_visible-reward-topology-v1/). This is a negative result with a reproducible audit trail—not a phase-transition or learned-communication claim.
 
 ## Frozen Stage One evidence
 
-The committed [baseline dataset](data/stage_one_baseline/episodes.csv) contains 200 recorded conditions: 4 policies × 5 α values × 10 seeds. Because heuristic actions do not learn from reward, α changes recorded return but should not change their trajectories. That invariant is deliberate.
+The committed [2026-09-15 baseline dataset](data/stage_one_baseline/runs/2026-09-15_baseline-v1/episodes.csv) contains 200 recorded conditions: 4 policies × 5 α values × 10 seeds. Because heuristic actions do not learn from reward, α changes recorded return but should not change their trajectories. That invariant is deliberate. The [data catalog](data/README.md) indexes every frozen run by UTC date and run ID.
 
 | Policy | Success | Mean completion | Mean steps | Mean distance |
 | --- | ---: | ---: | ---: | ---: |
@@ -93,9 +93,9 @@ The committed [baseline dataset](data/stage_one_baseline/episodes.csv) contains 
 
 These results establish discriminative baselines and a functioning measurement stack. They do not establish emergence. See the [Stage One results note](docs/stage-one-results.md) for interpretation and limitations.
 
-![Behavioral baseline distributions](data/stage_one_baseline/charts/behavioral_metrics.png)
+![Behavioral baseline distributions](data/stage_one_baseline/runs/2026-09-15_baseline-v1/charts/behavioral_metrics.png)
 
-![Trajectory overlay and visitation heatmap](data/stage_one_baseline/charts/trajectory_and_heatmap.png)
+![Trajectory overlay and visitation heatmap](data/stage_one_baseline/runs/2026-09-15_baseline-v1/charts/trajectory_and_heatmap.png)
 
 ## Capstone alignment
 

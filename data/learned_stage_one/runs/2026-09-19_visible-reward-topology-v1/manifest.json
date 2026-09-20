@@ -1,4 +1,9 @@
 {
+  "run_id": "2026-09-19_visible-reward-topology-v1",
+  "experiment_id": "learned_stage_one",
+  "run_date_utc": "2026-09-19",
+  "evidence_status": "completed_negative_result",
+  "protocol": "experiments/stage_one_learned.json",
   "schema_version": "learned-stage-one.1",
   "generated_at_utc": "2026-09-19T22:09:31.712795+00:00",
   "python": "3.12.14",

@@ -1,16 +1,7 @@
-# Frozen baseline dataset
+# Stage One baseline runs
 
-Generated on 2026-09-15 with:
+| UTC date | Run ID | Records | Status |
+|---|---|---:|---|
+| 2026-09-15 | [`2026-09-15_baseline-v1`](runs/2026-09-15_baseline-v1/) | 200 episodes | Frozen heuristic baseline |
 
-```bash
-python main.py collect --seeds 10 --output data/stage_one_baseline
-```
-
-The dataset contains 200 weakly shaped reward conditions spanning four fixed policies, five reward-mixing values, and ten seeds. The same seed intentionally repeats across α because heuristic actions do not learn from reward; this makes trajectory invariance an accounting control. Sparse terminal rewards are implemented and tested but reserved for the learned-policy experiment.
-
-- `episodes.csv`: append-only episode evidence.
-- `summary.csv`: means and sample standard deviations by policy and α.
-- `manifest.json`: schema, environment, seed coverage, and claim boundary.
-- `charts/`: regenerated visual summaries.
-
-This is heuristic baseline evidence. It is not learned-policy or emergence evidence.
+New baseline replications must be stored as additional dated directories under `runs/`; existing runs remain immutable.

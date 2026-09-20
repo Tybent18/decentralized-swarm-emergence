@@ -27,7 +27,7 @@ Shared PPO completion remained high through α = 0.5, then fell to 0.333 at α =
 
 Shared PPO collision rate also rose from 0.0381 to 0.1267 (difference 0.0885, 95% bootstrap CI [0.0557, 0.1214], Welch p = 0.0208).
 
-![Learned reward-topology results](../data/learned_stage_one_full/charts/learned_reward_topology.png)
+![Learned reward-topology results](../data/learned_stage_one/runs/2026-09-19_visible-reward-topology-v1/charts/learned_reward_topology.png)
 
 ## Interpretation
 
@@ -41,7 +41,7 @@ The appropriate follow-up is replication with more independent training seeds an
 
 ## Evidence
 
-The committed evidence directory contains:
+The dated evidence directory `data/learned_stage_one/runs/2026-09-19_visible-reward-topology-v1/` contains:
 
 - `training.csv`: 900 update-level training records;
 - `evaluations.csv`: 150 held-out evaluation episodes;

@@ -1,4 +1,8 @@
 {
+  "run_id": "2026-09-15_baseline-v1",
+  "experiment_id": "stage_one_baseline",
+  "run_date_utc": "2026-09-15",
+  "evidence_status": "frozen_baseline",
   "schema_version": "stage-one.1",
   "generated_at_utc": "2026-09-15T02:53:14.992859+00:00",
   "python": "3.12.14",
